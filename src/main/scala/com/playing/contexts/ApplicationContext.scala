@@ -2,10 +2,17 @@ package com.playing.contexts
 
 import com.playing.utils.SparkConfig
 import kafka.serializer.StringDecoder
-import org.apache.spark.rdd.RDD
 import org.apache.spark.streaming.kafka.KafkaUtils
 
 /**
+  * Consumes messages from one or more topics in Kafka and does wordcount.
+  * Usage: DirectKafkaWordCount <brokers> <topics>
+  * <brokers> is a list of one or more Kafka brokers
+  * <topics> is a list of one or more kafka topics to consume from
+  *
+  * Example:
+  * $ bin/run-example streaming.DirectKafkaWordCount broker1-host:port,broker2-host:port topic1,topic2
+  *
   * Created by imana on 8/15/2016.
   */
 object ApplicationContext {
